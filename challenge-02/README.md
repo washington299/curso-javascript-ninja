@@ -71,31 +71,17 @@ Crie uma função com as seguintes características:
 6. E ainda, se nenhuma das condições acima forem atendidas, retorne `null`.
 */
 function calcular(x, y, z) {
-  if (x && !y && !z) {
+  if (x !== undefined && y === undefined && z === undefined) {
     return x;
-  } else if (y && !x && !z) {
-    return y;
-  } else if (z && !x && !y) {
-    return z;
-  }
-
-  if (x && y && !z) {
+  } else if (x !== undefined && y !== undefined && z === undefined) {
     return x + y;
-  } else if (y && z && !x) {
-    return y + z;
-  } else if (x && z && !y) {
-    return x + z;
-  }
-
-  if (x && y && z) {
+  } else if (x !== undefined && y !== undefined && z !== undefined) {
     return (x + y) / z;
-  }
-
-  if (!x && !y && !z) {
+  } else if (x === undefined && y === undefined && z === undefined) {
     return false;
+  } else {
+    return null;
   }
-
-  return null;
 }
 
 // Invoque a função acima utilizando todas as possibilidades (com nenhum argumento, com um, com dois e com três.) Coloque um comentário de linha ao lado da função com o resultado de cada invocação.
