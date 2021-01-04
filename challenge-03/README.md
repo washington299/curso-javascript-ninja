@@ -128,7 +128,7 @@ Quantos anos a `pessoa` tem agora? (Use a instrução para responder e
 comentários inline ao lado da instrução para mostrar qual foi a resposta
 retornada)
 */
-23
+pessoa.mostrarIdade(); // Olá, eu tenho 23 anos!
 
 /*
 Agora, faça a `pessoa` caminhar alguns metros, invocando o método `andar` 3x,
@@ -147,7 +147,7 @@ pessoa.andando; // true
 /*
 Se a pessoa ainda está andando, faça-a parar.
 */
-pessoa.andando = false;
+pessoa.parar();
 
 /*
 E agora: a pessoa ainda está andando? (Use uma instrução para responder e
@@ -179,21 +179,21 @@ método), que será concatenada com a frase de retorno, mostrando a resposta
 correta, de acordo com os dados inseridos no objeto.
 */
 pessoa.apresentacao = function () {
-  var apresentandoSexo = 'eu sou o';
-  var apresentandoIdade = 'anos';
-  var apresentandoQuantidadeMetrosCaminhados = 'metros';
+  var sexo = 'o';
+  var idade = 'anos';
+  var metrosCaminhados = 'metros';
   
   if (pessoa.sexo === 'Feminino') {
-    apresentandoSexo = 'eu sou a';
+    sexo = 'a';
   }
   if (pessoa.idade === 1) {
-    apresentandoIdade = 'ano';
+    idade = 'ano';
   }
   if (pessoa.caminhouQuantosMetros === 1) {
-    apresentandoQuantidadeMetrosCaminhados = 'metro';
+    metrosCaminhados = 'metro';
   }
 
-  return 'Olá, ' + apresentandoSexo + ' ' + pessoa.nomeCompleto() + ', ' + 'tenho ' + pessoa.idade + ' ' + apresentandoIdade + ', ' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + apresentandoQuantidadeMetrosCaminhados;
+  return 'Olá, eu sou ' + sexo + ' ' + pessoa.nomeCompleto() + ', ' + 'tenho ' + pessoa.idade + ' ' + idade + ', ' + pessoa.altura + ', ' + 'meu peso é ' + pessoa.peso + ' e, só hoje, eu já caminhei ' + pessoa.caminhouQuantosMetros + ' ' + metrosCaminhados;
 }
 
 // Agora, apresente-se ;)
