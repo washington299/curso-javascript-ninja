@@ -35,7 +35,11 @@ var array2 = ['string', 10, false, null, undefined];
 Invoque a função criada acima, fazendo-a retornar todos os valores do último
 array criado.
 */
-console.log(getArray(array2));
+console.log(myFunction(array2, 0));
+console.log(myFunction(array2, 1));
+console.log(myFunction(array2, 2));
+console.log(myFunction(array2, 3));
+console.log(myFunction(array2, 4));
 
 /*
 Crie uma função chamada `book`, que recebe um parâmetro, que será o nome do
@@ -53,28 +57,24 @@ os livros.
 */
 function book(name) {
   var obj = {
-    cleanArchitecture: {
+    'Clean Architecture': {
       quantidadePaginas: 432,
       autor: 'Robert C. Martin',
       editora: 'Pearson',
     },
-    domainDrivenDesign: {
+    'Domain Driven Design': {
       quantidadePaginas: 563,
       autor: 'Evans Eric',
       editora: 'Addison-Wesley Professional',
     },
-    thePragmaticProgrammer: {
+    'The Pragmatic Programmer': {
       quantidadePaginas: 460,
       autor: 'Thomas David, Hunt Andrew',
       editora: 'Addison-Wesley Professional',
     },
   };
 
-  if (name === undefined) {
-    return obj;
-  }
-
-  return obj[name];
+  return name ? obj[name] : obj;
 }
 
 /*
@@ -87,18 +87,19 @@ Ainda com a função acima, imprima a quantidade de páginas de um livro qualque
 usando a frase:
 "O livro [NOME_DO_LIVRO] tem [X] páginas!"
 */
-console.log('O livro clean architecture tem ' + book('cleanArchitecture').quantidadePaginas + ' páginas!');
+var bookName = 'Clean Architecture';
+console.log('O livro ' + bookName + ' tem ' + book(bookName).quantidadePaginas + ' páginas!');
 
 /*
 Ainda com a função acima, imprima o nome do autor de um livro qualquer, usando
 a frase:
 "O autor do livro [NOME_DO_LIVRO] é [AUTOR]."
 */
-console.log('O autor do livro domain driven design é ' + book('domainDrivenDesign').autor + '.');
+console.log('O autor do livro ' + bookName + ' é ' + book(bookName).autor + '.');
 
 /*
 Ainda com a função acima, imprima o nome da editora de um livro qualquer, usando
 a frase:
 "O livro [NOME_DO_LIVRO] foi publicado pela editora [NOME_DA_EDITORA]."
 */
-console.log('O livro the pragmatic programmer foi publicado pela editora ' + book('thePragmaticProgrammer').editora + '.');
+console.log('O livro ' + bookName + ' foi publicado pela editora ' + book(bookName).editora + '.');
