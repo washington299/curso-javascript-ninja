@@ -74,31 +74,29 @@ Crie uma função chamada `convertToHex`, com as seguintes características:
     "Não temos o equivalente hexadecimal para [COR]."
 */
 function convertToHex(color) {
-  var white = '#FFF';
-  var black = '#000';
-  var red = '#F00';
-  var green = '#0F0';
-  var pink = '#F0F';
+  var hexa;
 
   switch(color) {
     case "white":
-      console.log('O hexadecimal para a cor ' + color + ' é ' + white + '.');
+      hexa = '#FFF';
       break;
     case "black":
-      console.log('O hexadecimal para a cor ' + color + ' é ' + black + '.');
+      hexa = '#000';
       break;
     case "red":
-      console.log('O hexadecimal para a cor ' + color + ' é ' + red + '.');
+      hexa = '#F00';
       break;
     case "green":
-      console.log('O hexadecimal para a cor ' + color + ' é ' + green + '.');
+      hexa = '#0F0';
       break;
     case "pink":
-      console.log('O hexadecimal para a cor ' + color + ' é ' + pink + '.');
+      hexa = '#F0F';
       break;
     default:
-      console.log('Não temos o equivalente hexadecimal para ' + color + '.');
+      return 'Não temos o equivalente hexadecimal para ' + color + '.';
   }
+
+  return 'O hexadecimal para a cor ' + color + ' é ' + hexa + '.';
 }
 
 /*
