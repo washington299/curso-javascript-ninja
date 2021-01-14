@@ -51,8 +51,7 @@
   /*
   Remova o último livro, e mostre-o no console.
   */
-  var deletedBook = books.pop();
-  console.log(deletedBook);
+  console.log(books.pop());
 
   console.log( '\nAgora sobraram somente os livros:' );
   /*
@@ -75,13 +74,17 @@
   Converta os livros novamente para objeto.
   */
   books = JSON.parse(books);
-
   console.log( '\nAgora os livros são objetos novamente:' );
   /*
   Mostre no console todas as propriedades e valores de todos os livros,
   no formato abaixo:
   "[PROPRIEDADE]: [VALOR]"
   */
+  for (var i = 0; i < books.length; i++) {
+    for (var book in books[i]) {
+      console.log(book + ': ' + books[i][book]);
+    }
+  }
 
   /*
   Crie um array chamado `myName`. Cada item desse array deve ser uma letra do
