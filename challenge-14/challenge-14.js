@@ -77,7 +77,7 @@
   var name = ['Wa', 'shing', 'ton'];
   var newName = name.reduce(function(acumulado, atual) {
     return acumulado + 'P' + atual;
-  });
+  }, '');
   console.log(newName);
 
   /*
